@@ -5,13 +5,13 @@
 <!-- ================= SEO FOUNDATION ================= -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOGIVIX | Enterprise Logistics & Global Freight Infrastructure</title>
+<title>LOGIVIX Logistics | National Freight & Supply Chain Infrastructure</title>
 <meta name="description" content="LOGIVIX delivers enterprise freight management, supply chain intelligence, and warehousing infrastructure for high-growth global brands.">
 <meta name="keywords" content="enterprise logistics, freight management, supply chain optimization, warehousing solutions, global freight company">
 <meta name="author" content="LOGIVIX">
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://www.logivix.com/">
+<link rel="canonical" href="https://logivix.github.io/">
 
 <!-- Open Graph -->
 <meta property="og:title" content="LOGIVIX | Elite Logistics Infrastructure">
@@ -139,7 +139,31 @@ nav a:hover{color:#ff6a00;}
 
 /* ===== HERO ===== */
 
+/* ===== HEADER GLOW ANIMATION ===== */
 
+.hero h1 {
+position: relative;
+z-index: 2;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(255,106,0,.25), transparent 60%);
+transform: translate(-50%, -50%);
+animation: pulseGlow 6s ease-in-out infinite;
+z-index: 0;
+}
+
+@keyframes pulseGlow {
+0% { opacity: .5; transform: translate(-50%, -50%) scale(1); }
+50% { opacity: .9; transform: translate(-50%, -50%) scale(1.2); }
+100% { opacity: .5; transform: translate(-50%, -50%) scale(1); }
+}
 /* ===== GRID SYSTEM ===== */
 .grid{
 display:grid;
@@ -472,7 +496,7 @@ color:#aaa;
             "@context":"https://schema.org",
             "@type":"Blog",
             "name":"LOGIVIX Insights",
-            "url":"https://yourdomain.com/insights.html",
+            "url":"https://logivix.github.io/",
             "description":"Enterprise logistics intelligence and supply chain strategy."
             }
             </script>
@@ -531,8 +555,10 @@ color:#aaa;
 </section>
 
 <footer>
-© 2026 LOGIVIX  Logistics. All Rights Reserved.
-</footer>
+    © 2026 LOGIVIX Logistics. All Rights Reserved.<br>
+    Head Office: Islamabad<br>
+    <a href="privacy.html">Privacy Policy</a>
+    </footer>
 
 <a class="whatsapp" href="https://wa.me/923466584831" target="_blank" style="
 position:fixed;
