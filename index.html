@@ -1,599 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIVIX Logistics | National Freight & Supply Chain Infrastructure</title>
+    <meta name="description" content="LOGIVIX delivers enterprise freight management, supply chain intelligence, and warehousing infrastructure for high-growth global brands.">
+    <meta name="keywords" content="enterprise logistics, freight management, supply chain optimization, warehousing solutions, global freight company">
+    
+    <link rel="canonical" href="https://logivix.github.io/">
 
-<!-- ================= SEO FOUNDATION ================= -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOGIVIX Logistics | National Freight & Supply Chain Infrastructure</title>
-<meta name="description" content="LOGIVIX delivers enterprise freight management, supply chain intelligence, and warehousing infrastructure for high-growth global brands.">
-<meta name="keywords" content="enterprise logistics, freight management, supply chain optimization, warehousing solutions, global freight company">
-<meta name="author" content="LOGIVIX">
-    <meta name="google-site-verification" content="4N7PQIimSl1uI0jpuclQkctxjs20FMxchPo8mL60Z6Q" />
-<meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link rel="canonical" href="https://logivix.github.io/">
+    <style>
+        /* ===== GLOBAL RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0b0f18;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-<!-- Open Graph -->
-<meta property="og:title" content="LOGIVIX | Elite Logistics Infrastructure">
-<meta property="og:description" content="Precision freight and supply chain systems engineered for enterprise growth.">
-<meta property="og:type" content="website">
+        /* ===== NEW: SCROLL REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-<!-- Font Awesome (WORKING VERSION) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        /* ===== PARTICLE BACKGROUND ===== */
+        #particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 30%, #1a1f2e, #0b0f18 60%);
+            overflow: hidden;
+        }
+        .dot {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: #ff6a00;
+            border-radius: 50%;
+            opacity: .6;
+            animation: float 20s linear infinite;
+        }
+        @keyframes float {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-10vh); }
+        }
 
-<style>
+        /* ===== LAYOUT ===== */
+        section { padding: 100px 8%; position: relative; }
+        .container { max-width: 1200px; margin: auto; }
+        h1 { font-size: 3.5rem; line-height: 1.1; }
+        h2 { font-size: 2.8rem; margin-bottom: 40px; }
+        p { color: #c7c7c7; line-height: 1.7; }
+        .orange { color: #ff6a00; }
 
-/* ===== GLOBAL RESET ===== */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        /* ===== NAV (ENHANCED) ===== */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0; left: 0;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: 0.5s;
+        }
+        nav.scrolled {
+            background: rgba(11, 15, 24, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 8%;
+            border-bottom: 1px solid rgba(255, 106, 0, 0.2);
+        }
+        .nav-logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; }
+        nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 500; transition: .3s; }
+        nav a:hover { color: #ff6a00; }
 
-html{
-scroll-behavior:smooth;
-}
+        /* ===== HERO WITH VIDEO ===== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 0 8%;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(11,15,24,0.9), rgba(11,15,24,0.4));
+            z-index: -1;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 20px; }
+        .hero-sub { font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; }
 
-body{
-font-family: 'Segoe UI', sans-serif;
-background:#0b0f18;
-color:#fff;
-overflow-x:hidden;
-}
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 16px 38px;
+            background: linear-gradient(135deg,#ff6a00,#ff8c00);
+            color: #000;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(255,106,0,.4); }
+        .btn-outline {
+            padding: 16px 38px;
+            border: 2px solid #ff6a00;
+            color: #ff6a00;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: .3s;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        .btn-outline:hover { background: #ff6a00; color: #000; }
 
-/* ===== PARTICLE BACKGROUND ===== */
-#particles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-background:radial-gradient(circle at 20% 30%, #1a1f2e, #0b0f18 60%);
-overflow:hidden;
-}
+        /* ===== METRICS ===== */
+        .hero-metrics { display: flex; gap: 50px; margin-top: 50px; }
+        .hero-metrics h3 { font-size: 2.5rem; color: #ff6a00; margin-bottom: 5px; }
+        .hero-metrics span { color: #aaa; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
-.dot{
-position:absolute;
-width:3px;
-height:3px;
-background:#ff6a00;
-border-radius:50%;
-opacity:.6;
-animation:float 20s linear infinite;
-}
+        /* ===== CARDS & GRID ===== */
+        .grid { display: grid; gap: 30px; }
+        .services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .card {
+            background: rgba(255,255,255,.03);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.05);
+            transition: .4s;
+        }
+        .card:hover {
+            background: rgba(255,255,255,.07);
+            transform: translateY(-10px);
+            border-color: #ff6a00;
+        }
+        .card i { font-size: 40px; color: #ff6a00; margin-bottom: 20px; }
 
-@keyframes float{
-from{transform:translateY(100vh);}
-to{transform:translateY(-10vh);}
-}
+        /* ===== CONTACT FORM (FIXED) ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+            align-items: start;
+        }
+        .form-box {
+            background: rgba(255,255,255,.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.1);
+            backdrop-filter: blur(15px);
+        }
+        .form-box input, .form-box textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background: #0b0f18; border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; color: #fff; outline: none;
+        }
+        .form-box input:focus { border-color: #ff6a00; }
 
-/* ===== LAYOUT ===== */
-section{
-padding:100px 8%;
-}
+        /* ===== FOOTER ===== */
+        footer { padding: 60px 8%; background: #05070a; text-align: center; color: #777; border-top: 1px solid #111; }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            background: #25D366; color: white;
+            padding: 15px 25px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 999;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.05); background: #1eb956; }
 
-.container{
-max-width:1200px;
-margin:auto;
-}
-
-h1{
-font-size:3.5rem;
-line-height:1.1;
-}
-
-h2{
-font-size:2.4rem;
-margin-bottom:40px;
-}
-
-p{
-color:#c7c7c7;
-line-height:1.7;
-}
-
-.orange{color:#ff6a00;}
-
-/* ===== BUTTON ===== */
-.btn{
-display:inline-block;
-padding:14px 34px;
-background:linear-gradient(135deg,#ff6a00,#ff8c00);
-color:#000;
-border-radius:40px;
-text-decoration:none;
-font-weight:600;
-transition:.4s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 40px rgba(255,106,0,.4);
-}
-
-/* ===== NAV ===== */
-nav{
-position:fixed;
-width:100%;
-top:0;
-left:0;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(32, 26, 26, 0.85);
-backdrop-filter:blur(12px);
-z-index:1000;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:25px;
-font-weight:500;
-transition:.3s;
-}
-
-nav a:hover{color:#ff6a00;}
-
-/* ===== HERO ===== */
-
-/* ===== HEADER GLOW ANIMATION ===== */
-
-.hero h1 {
-position: relative;
-z-index: 2;
-}
-
-.hero::before {
-content: "";
-position: absolute;
-top: 50%;
-left: 50%;
-width: 600px;
-height: 600px;
-background: radial-gradient(circle, rgba(255,106,0,.25), transparent 60%);
-transform: translate(-50%, -50%);
-animation: pulseGlow 6s ease-in-out infinite;
-z-index: 0;
-}
-
-@keyframes pulseGlow {
-0% { opacity: .5; transform: translate(-50%, -50%) scale(1); }
-50% { opacity: .9; transform: translate(-50%, -50%) scale(1.2); }
-100% { opacity: .5; transform: translate(-50%, -50%) scale(1); }
-}
-/* ===== GRID SYSTEM ===== */
-.grid{
-display:grid;
-gap:40px;
-}
-
-.services{
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
-
-.card{
-background:rgba(255,255,255,.04);
-padding:40px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.08);
-transition:.4s;
-}
-
-.card i{
-font-size:32px;
-margin-bottom:20px;
-color:#ff6a00;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#ff6a00;
-box-shadow:0 20px 40px rgba(255,106,0,.2);
-}
-
-/* ===== BLOG ===== */
-.blog article{
-background:#111827;
-padding:30px;
-border-radius:15px;
-transition:.4s;
-}
-
-.blog article:hover{
-transform:translateY(-8px);
-border:1px solid #ff6a00;
-}
-
-/* ===== SOCIAL ===== */
-.social a{
-margin-right:15px;
-font-size:20px;
-color:#fff;
-transition:.3s;
-}
-
-.social a:hover{
-color:#ff6a00;
-}
-
-/* ===== FOOTER ===== */
-footer{
-padding:40px 8%;
-background:#000;
-text-align:center;
-color:#777;
-}
-
-/* ===== WHATSAPP FLOAT ===== */
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:#fff;
-padding:16px;
-border-radius:50%;
-font-size:22px;
-box-shadow:0 10px 20px rgba(0,0,0,.4);
-transition:.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.1);
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-h1{font-size:2.2rem;}
-h2{font-size:1.8rem;}
-section{padding:80px 6%;}
-nav{padding:15px 6%;}
-}
-/* ===== PREMIUM HERO ===== */
-
-.hero{
-position:relative;
-height:100vh;
-display:flex;
-align-items:center;
-overflow:hidden;
-background:radial-gradient(circle at 20% 40%, rgba(255,106,0,.08), transparent 60%),
-linear-gradient(120deg,#0b0f18,#0d1320);
-}
-
-.hero-overlay{
-position:absolute;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle, rgba(255,106,0,.06) 1px, transparent 1px);
-background-size:40px 40px;
-animation:moveGrid 60s linear infinite;
-opacity:.3;
-}
-
-@keyframes moveGrid{
-from{transform:translate(0,0);}
-to{transform:translate(-200px,-200px);}
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-animation:fadeUp 1.2s ease;
-}
-
-.hero h1{
-font-size:4rem;
-line-height:1.1;
-padding-top: 30px;
-margin-bottom:20px;
-}
-
-.hero-sub{
-font-size:1.2rem;
-color:#c7c7c7;
-margin-bottom:40px;
-max-width:600px;
-}
-
-.hero-buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:60px;
-}
-
-.btn-outline{
-padding:14px 34px;
-border:1px solid #ff6a00;
-color:#ff6a00;
-border-radius:40px;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn-outline:hover{
-background:#ff6a00;
-color:#000;
-}
-
-.hero-metrics{
-display:flex;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.hero-metrics h3{
-font-size:2rem;
-color:#ff6a00;
-margin-bottom:5px;
-}
-
-.hero-metrics span{
-font-size:.9rem;
-color:#aaa;
-}
-
-/* Responsive */
-@media(max-width:768px){
-.hero h1{font-size:2.4rem;}
-.hero-metrics{gap:30px;}
-}
-</style>
+        /* Responsive */
+        @media(max-width:768px){
+            h1 { font-size: 2.8rem !important; }
+            .btn-outline { margin-left: 0; margin-top: 15px; display: block; text-align: center; }
+            .hero-metrics { gap: 20px; flex-wrap: wrap; }
+        }
+    </style>
 </head>
 
 <body>
 
 <div id="particles"></div>
 
-<nav>
-<h2 class="orange">LOGIVIX</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#blog">Insights</a>
-<a href="#contact">Contact</a>
-</div>
+<nav id="navbar">
+    <div class="nav-logo orange">LOGIVIX</div>
+    <div>
+        <a href="#services">Services</a>
+        <a href="#blog">Insights</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
 <section class="hero">
-
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://player.vimeo.com/external/451000630.sd.mp4?s=6a338276182103f6f9660c6d93335e390c58a8a4&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     
     <div class="container hero-content">
-    
-    <h1>
-     <span class="orange">Global Logistics</span><br>
-    for Enterprise Growth
-    </h1>
-    
-    <p class="hero-sub">
-    Scalable freight infrastructure. Intelligent supply chains.
-    Relocation, moving, and warehousing systems built for dominance.
-    </p>
-    
-    <div class="hero-buttons">
-    <a href="#contact" class="btn">Request Consultation</a>
-    <a href="#services" class="btn-outline">Explore Services</a>
+        <h1 class="reveal">
+            <span class="orange">Global Logistics</span><br>
+            for Enterprise Growth
+        </h1>
+        <p class="hero-sub reveal">
+            Scalable freight infrastructure. Intelligent supply chains. 
+            Relocation, moving, and warehousing systems built for dominance in 2026.
+        </p>
+        <div class="hero-buttons reveal">
+            <a href="#contact" class="btn">Request Consultation</a>
+            <a href="#services" class="btn-outline">Explore Services</a>
+        </div>
+        
+        <div class="hero-metrics reveal">
+            <div><h3 class="counter" data-target="120">0</h3><span>Enterprise Clients</span></div>
+            <div><h3 class="counter" data-target="100">0</h3><span>% Coverage</span></div>
+            <div><h3 class="counter" data-target="99">0</h3><span>% On-Time</span></div>
+        </div>
     </div>
-    
-    <div class="hero-metrics">
-    <div>
-    <h3>120+</h3>
-    <span>Enterprise Clients</span>
-    </div>
-    <div>
-    <h3>100%</h3>
-    <span>Insurance</span>
-    </div>
-    <div>
-    <h3>99.2%</h3>
-    <span>On-Time Delivery</span>
-    </div>
-    </div>
-    
-    </div>
-    </section>
+</section>
+
 <section id="services">
     <div class="container">
-    <h2>Comprehensive Logistics Solutions</h2>
-    
-    <div class="grid services">
-    
-    <div class="card">
-    <i class="fas fa-plane"></i>
-    <h3>Air Freight</h3>
-    <p>Priority global air cargo for time-sensitive enterprise shipments.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-ship"></i>
-    <h3>Ocean Freight</h3>
-    <p>Full-container and consolidated sea freight worldwide.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-truck"></i>
-    <h3>Land Transportation</h3>
-    <p>Cross-border and domestic trucking solutions.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-warehouse"></i>
-    <h3>Warehousing</h3>
-    <p>Secure storage with real-time inventory systems.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-boxes-stacked"></i>
-    <h3>Packing Services</h3>
-    <p>Professional export-grade packing & cargo protection.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-house"></i>
-    <h3>Relocation Services</h3>
-    <p>Corporate and executive relocation management.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-dolly"></i>
-    <h3>Moving Solutions</h3>
-    <p>Residential and commercial moving with precision handling.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-chart-line"></i>
-    <h3>Supply Chain Optimization</h3>
-    <p>Data-driven routing and automation frameworks.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-shield-halved"></i>
-    <h3>Cargo Insurance</h3>
-    <p>Risk protection and compliance management.</p>
-    </div>
-    
-    <div class="card">
-    <i class="fas fa-globe"></i>
-    <h3>Global Distribution</h3>
-    <p>Multi-country fulfillment infrastructure.</p>
-    </div>
-    
-    </div>
-    </div>
-    </section>
-
-    <section id="blog">
-        <div class="container">
-        <h2>Logistics Insights</h2>
-        
-        <div class="grid blog">
-        
-        <article>
-        <h3><a href="freight-cost-engineering.html" style="color:#fff;text-decoration:none;">Freight Cost Engineering 2026</a></h3>
-        <p>Advanced frameworks used by multinational logistics leaders.</p>
-        </article>
-        
-        <article>
-        <h3><a href="warehouse-automation.html" style="color:#fff;text-decoration:none;">Automation in Warehousing</a></h3>
-        <p>How predictive systems eliminate operational bottlenecks.</p>
-        </article>
-        
-        <article>
-        <h3><a href="supply-chain-risk.html" style="color:#fff;text-decoration:none;">Global Supply Chain Risk Modeling</a></h3>
-        <p>Designing resilient enterprise logistics ecosystems.</p>
-        </article>
-        
-        </div>
-        </div>
-        <script type="application/ld+json">
-            {
-            "@context":"https://schema.org",
-            "@type":"Blog",
-            "name":"LOGIVIX Insights",
-            "url":"https://logivix.github.io/",
-            "description":"Enterprise logistics intelligence and supply chain strategy."
-            }
-            </script>
-        </section>
-<section id="contact">
-    <div class="container">
-    
-    <h2>Start Your Logistics Transformation</h2>
-    
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px;align-items:center;">
-    
-    <!-- LEFT SIDE -->
-    <div>
-    <h3 style="margin-bottom:20px;">Why Partner With LOGIVIX?</h3>
-    <p>We engineer scalable logistics ecosystems for enterprises that demand operational dominance. Every shipment. Every route. Fully optimized.</p>
-    
-    <div style="margin-top:30px;">
-    <p><i class="fas fa-check orange"></i> 24-Hour Executive Response</p>
-    <p><i class="fas fa-check orange"></i> Dedicated Account Management</p>
-    <p><i class="fas fa-check orange"></i> Global Partner Network</p>
-    <p><i class="fas fa-check orange"></i> Real-Time Tracking Systems</p>
-    </div>
-    
-    <div class="social" style="margin-top:30px;">
-    <a href="https://www.instagram.com/logivix_logistics/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://web.facebook.com/Logivix.Logistics"><i class="fab fa-facebook" target="_blank"></i></a>
-    <a href="https://www.threads.com/@logivix_logistics" target="_blank"><i class="fab fa-threads"></i></a>
-    <a href="https://wa.me/923466584831"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    </div>
-    
-    <!-- RIGHT SIDE FORM -->
-    <div style="background:rgba(255,255,255,.05);padding:40px;border-radius:20px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(15px);">
-    
-    <form action="https://formsubmit.co/logivix.logistics@proton.me" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New LOGIVIX Executive Inquiry">
-    
-    <input type="text" name="Company Name" placeholder="Company Name" required style="width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:8px;background:#0f172a;color:#fff;">
-    
-    <input type="email" name="Business Email" placeholder="Business Email" required style="width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:8px;background:#0f172a;color:#fff;">
-    
-    <textarea name="Message" rows="5" placeholder="Describe your logistics requirements" required style="width:100%;padding:14px;margin-bottom:20px;border:none;border-radius:8px;background:#0f172a;color:#fff;"></textarea>
-    
-    <button type="submit" class="btn" style="width:100%;">Request Executive Consultation</button>
-    </form>
-    
-    </div>
-    
-    </div>
-    </div>
-    </section>
-
+        <h2 class="reveal">Comprehensive Logistics Solutions</h2>
+        <div class="grid services-grid">
+            <div class="card reveal"><i class="fas fa-truck-moving"></i><h3>Road Freight</h3><p>Domestic FTL & LTL movement via dedicated truck fleets.</p></div>
+    <div class="card reveal"><i class="fas fa-ship"></i><h3>Ocean Freight</h3><p>International FCL/LCL shipping via Karachi and Qasim ports.</p></div>
+    <div class="card reveal"><i class="fas fa-plane-departure"></i><h3>Air Freight</h3><p>Expedited global shipping via major Pakistani airports.</p></div>
+    <div class="card reveal"><i class="fas fa-train"></i><h3>Rail Freight</h3><p>Cost-effective heavy bulk cargo via the national rail network.</p></div>
+    <div class="card reveal"><i class="fas fa-network-wired"></i><h3>Multimodal</h3><p>Integrated sea, air, rail, and road transit optimization.</p></div>
+    <div class="card reveal"><i class="fas fa-passport"></i><h3>TIR Transit</h3><p>Streamlined international road transit under global guarantee.</p></div>
+    <div class="card reveal"><i class="fas fa-warehouse"></i><h3>General Warehousing</h3><p>Strategic long-term and short-term storage near industrial hubs.</p></div>
+    <div class="card reveal"><i class="fas fa-snowflake"></i><h3>Cold Chain</h3><p>Climate-controlled logistics for pharma, produce, and dairy.</p></div>
+    <div class="card reveal"><i class="fas fa-lock"></i><h3>Bonded Warehousing</h3><p>Secure storage with deferred duty payments for imported goods.</p></div>
+    <div class="card reveal"><i class="fas fa-cloud"></i><h3>Cloud Warehousing</h3><p>Tech-enabled marketplace for flexible, on-demand storage space.</p></div>
+    <div class="card reveal"><i class="fas fa-shuttle-van"></i><h3>E-comm Fulfillment</h3><p>End-to-end picking, packing, and dispatch for online sellers.</p></div>
+    <div class="card reveal"><i class="fas fa-map-location-dot"></i><h3>Last-Mile Delivery</h3><p>Final leg delivery featuring efficient COD management.</p></div>
+    <div class="card reveal"><i class="fas fa-retweet"></i><h3>Reverse Logistics</h3><p>Efficient management of product returns and refurbishments.</p></div>
+    <div class="card reveal"><i class="fas fa-barcode"></i><h3>Inventory Systems</h3><p>Real-time IMS tracking with automated restocking alerts.</p></div>
+    <div class="card reveal"><i class="fas fa-satellite"></i><h3>Fleet Management</h3><p>GPS tracking and route optimization for commercial fleets.</p></div>
+    <div class="card reveal"><i class="fas fa-file-invoice-dollar"></i><h3>Customs Brokerage</h3><p>Expert legal documentation and duty assessment for trade.</p></div>
+    <div class="card reveal"><i class="fas fa-weight-hanging"></i><h3>Project Cargo</h3><p>Heavy-lift and oversized transport for industrial projects.</p></div>
+    <div class="card reveal"><i class="fas fa-map-marked-alt"></i><h3>Transit Trade</h3><p>Specialized logistics for cargo destined for landlocked regions.</p></div>
+    <div class="card reveal"><i class="fas fa-dolly"></i><h3>Relocation</h3><p>Professional packers and movers for corporate and residential shifts.</p></div>
+    <div class="card reveal"><i class="fas fa-shield-alt"></i><h3>Cargo Insurance</h3><p>Comprehensive marine and transit insurance to mitigate risks.</p></div>
 
 </div>
+    </div>
+</section>
+
+<section id="blog">
+    <div class="container">
+        <h2 class="reveal">Logistics Insights</h2>
+        <div class="grid services-grid">
+            <div class="card reveal">
+                <h3>Freight Engineering 2026</h3>
+                <p>Advanced frameworks used by multinational logistics leaders.</p>
+                <a href="frieght_engineerinf_2026.html" class="orange" style="text-decoration:none; display:inline-block; margin-top:15px;">Read More →</a>
+            </div>
+            <div class="card reveal">
+                <h3>Automation in Warehousing</h3>
+                <p>How predictive systems eliminate operational bottlenecks.</p>
+                <a href="suppy_chain.html" class="orange" style="text-decoration:none; display:inline-block; margin-top:15px;">Read More →</a>
+            </div>
+            <div class="card reveal">
+                <h3>Green Revolution</h3>
+                <p>Designing resilient and sustainable enterprise logistics ecosystems.</p>
+                <a href="The Green Revolution.html" class="orange" style="text-decoration:none; display:inline-block; margin-top:15px;">Read More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2 class="reveal">Start Your Transformation</h2>
+        <div class="contact-container">
+            <div class="reveal">
+                <h3 style="margin-bottom:20px;">Why Partner With LOGIVIX?</h3>
+                <p>We engineer scalable logistics ecosystems for enterprises that demand operational dominance. Every shipment. Every route. Fully optimized.</p>
+                <div style="margin: 30px 0;">
+                    <p><i class="fas fa-check orange"></i> 24-Hour Executive Response</p>
+                    <p><i class="fas fa-check orange"></i> Dedicated Account Management</p>
+                    <p><i class="fas fa-check orange"></i> Real-Time AI Tracking</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/logivix_logistics/" class="orange" style="font-size:1.5rem; margin-right:20px;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.facebook.com/Logivix.Logistics" class="orange" style="font-size:1.5rem; margin-right:20px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="orange" style="font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.threads.com/@logivix_logistics" class="orange" style="font-size:1.5rem;"><i class="fab fa-threads"></i></a>
+
+
+ 
+                </div>
+            </div>
+
+            <div class="form-box reveal">
+                <form action="https://formsubmit.co/logivix.logistics@proton.me" method="POST">
+                    <input type="text" name="name" placeholder="Company Name" required>
+                    <input type="email" name="email" placeholder="Business Email" required>
+                    <textarea name="message" rows="5" placeholder="Describe your logistics requirements" required></textarea>
+                    <button type="submit" class="btn" style="width:100%">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
-    © 2026 LOGIVIX Logistics. All Rights Reserved.<br>
-    Head Office: Islamabad<br>
-    <a href="privacy.html">Privacy Policy</a>
-    </footer>
+    <div class="container">
+        <h2 class="orange" style="font-size:1.5rem; margin-bottom:10px;">LOGIVIX</h2>
+        <p>© 2026 LOGIVIX Logistics. All Rights Reserved.</p>
+        <p>Office: Islamabad</p>
+        <div style="margin-top:20px;">
+            <a href="privacy.html" style="color:#777; margin:0 10px; text-decoration:none;">Privacy Policy</a> | 
+            <a href="term&conditions.html" style="color:#777; margin:0 10px; text-decoration:none;">Terms of Service</a>
+        </div>
+    </div>
+</footer>
 
-<a class="whatsapp" href="https://wa.me/923466584831" target="_blank" style="
-position:fixed;
-bottom:25px;
-right:25px;
-background:linear-gradient(135deg,#25D366,#128C7E);
-color:#fff;
-padding:18px 22px;
-border-radius:50px;
-font-weight:600;
-text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-display:flex;
-align-items:center;
-gap:10px;
-transition:.3s;
-">
-<i class="fab fa-whatsapp"></i> Chat
+<a class="whatsapp-float" href="https://wa.me/923466584831" target="_blank">
+    <i class="fab fa-whatsapp"></i> Chat with Us
 </a>
 
 <script>
+    /* ===== FLOATING PARTICLES ===== */
+    const particleContainer = document.getElementById("particles");
+    for(let i=0; i<60; i++){
+        let dot = document.createElement("div");
+        dot.classList.add("dot");
+        dot.style.left = Math.random()*100 + "vw";
+        dot.style.animationDuration = (10 + Math.random()*20) + "s";
+        dot.style.opacity = Math.random();
+        particleContainer.appendChild(dot);
+    }
 
-/* ===== FLOATING PARTICLES ===== */
-const particleContainer = document.getElementById("particles");
+    /* ===== NAV SCROLL EFFECT ===== */
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
 
-for(let i=0;i<80;i++){
-let dot=document.createElement("div");
-dot.classList.add("dot");
-dot.style.left=Math.random()*100+"vw";
-dot.style.animationDuration=(10+Math.random()*20)+"s";
-dot.style.opacity=Math.random();
-particleContainer.appendChild(dot);
-}
+    /* ===== COUNTER ANIMATION ===== */
+    const observerOptions = { threshold: 0.5 };
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText.replace(/[^0-9]/g, '');
+                    const speed = 200 / target;
+                    const inc = target / 50;
+                    if(count < target){
+                        const nextNum = Math.ceil(count + inc);
+                        // Check if it's percentage or plus
+                        const suffix = counter.parentElement.innerText.includes('%') ? '%' : '+';
+                        counter.innerText = nextNum + suffix;
+                        setTimeout(updateCount, 40);
+                    } else {
+                        const suffix = counter.parentElement.innerText.includes('%') ? '%' : '+';
+                        counter.innerText = target + suffix;
+                    }
+                };
+                updateCount();
+                observer.unobserve(counter);
+            }
+        });
+    }, observerOptions);
 
+    document.querySelectorAll('.counter').forEach(count => counterObserver.observe(count));
+
+    /* ===== SCROLL REVEAL ===== */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 
 </body>
